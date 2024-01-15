@@ -1,0 +1,68 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.12.+'
+    }
+}
+apply plugin: 'com.android.application'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion '19.1.0'
+
+    defaultConfig {
+        versionCode 17
+        versionName "1.4"
+        minSdkVersion 11
+        targetSdkVersion 19
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+        }
+
+        release {
+            runProguard false
+            proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
+            debuggable false
+        }
+    }
+    productFlavors {
+        defaultFlavor {
+            proguardFile 'proguard-rules.txt'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+dependencies {
+    compile files('libs/volley.jar')
+    compile files('libs/gson-2.2.4.jar')
+    compile files('libs/stickylistheaders_lib.jar')
+    compile files('libs/httpclient-4.3.1.jar')
+    compile files('libs/httpcore-4.3.1.jar')
+    compile files('libs/httpmime-4.3.1.jar')
+    compile files('libs/apache-mime4j-core-0.7.2.jar')
+    compile files('libs/TestFlightLib.jar')
+    compile files('libs/disklrucache-2.0.2.jar')
+    compile files('libs/jsoup-1.7.3.jar')
+    compile files('libs/apache-commons-codec-1.9.jar')
+    compile files('libs/achartengine-1.1.0.jar')
+    compile project(':chips')
+    compile project(':photoview')
+    compile project(':slidingmenu')
+    compile project(':slidinguppanel')
+    compile 'com.android.support:gridlayout-v7:19.+'
+    compile 'com.android.support:appcompat-v7:19.+'
+    compile 'com.github.chrisbanes.actionbarpulltorefresh:library:+'
+}

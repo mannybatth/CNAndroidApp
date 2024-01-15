@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:padding="10dp"
+        android:background="@color/white"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/avatar"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp">
+
+            <RelativeLayout
+                android:layout_width="75dp"
+                android:layout_height="75dp">
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView2"
+                    android:src="@drawable/avatar_background" />
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:id="@+id/avatarImg"
+                    android:src="@drawable/default_user_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/conexus_number"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/example_text_short"
+                android:singleLine="true"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/example_text_short"
+            android:id="@+id/conexusName"
+            android:layout_alignTop="@id/avatar"
+            android:layout_toRightOf="@+id/avatar"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:maxLines="2"/>
+
+        <RelativeLayout
+            android:layout_below="@id/conexusName"
+            android:layout_toRightOf="@id/avatar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:gravity="left">
+
+            <include
+                layout="@layout/anar_display" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/header_post_button"
+            layout="@layout/post_button"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

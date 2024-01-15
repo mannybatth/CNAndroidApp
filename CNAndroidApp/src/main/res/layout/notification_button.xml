@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:clickable="true">
+
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:minWidth="@dimen/abc_action_button_min_width"
+        android:src="@drawable/ic_notif_menu"/>
+
+    <LinearLayout
+        android:id="@+id/total_notification_indicator"
+        android:minWidth="@dimen/abc_action_button_min_width"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:gravity="right">
+
+        <TextView
+            android:id="@+id/total_notification_indicator_text"
+            android:background="@drawable/red_circle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="2dp"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:text="24"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowColor="@color/black"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

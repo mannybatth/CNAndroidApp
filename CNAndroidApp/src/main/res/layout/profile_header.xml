@@ -1,0 +1,119 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:id="@+id/avatar"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp">
+
+        <RelativeLayout
+            android:layout_width="75dp"
+            android:layout_height="75dp">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/imageView2"
+                android:src="@drawable/avatar_background" />
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/avatarImg"
+                android:src="@drawable/default_user_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/cn_number"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/example_text_short"
+            android:singleLine="true"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/example_text_short"
+        android:id="@+id/userName"
+        android:layout_alignTop="@id/avatar"
+        android:layout_toRightOf="@+id/avatar"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:maxLines="2"/>
+
+    <TextView
+        android:id="@+id/header_user_position"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/avatar"
+        android:layout_below="@id/userName"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:singleLine="true"
+        android:textSize="16sp"
+        android:text="@string/example_text_short"/>
+
+    <TextView
+        android:id="@+id/header_about"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/avatar"
+        android:text="@string/example_text"
+        android:ellipsize="end"
+        android:paddingBottom="5dp"
+        android:maxLines="3"/>
+
+    <LinearLayout
+        android:id="@+id/interaction_pane"
+        android:layout_below="@id/header_about"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <com.thecn.app.views.ColorFilterButton
+            android:id="@+id/follow_button"
+            android:layout_width="133dp"
+            android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:src="@drawable/follow_button_image"
+            android:scaleType="fitXY"
+            android:background="@null"
+            style="?android:buttonBarButtonStyle"/>
+
+        <com.thecn.app.views.ColorFilterButton
+            android:id="@+id/colleague_button"
+            android:layout_width="133dp"
+            android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:src="@drawable/not_colleague_button_image"
+            android:scaleType="fitXY"
+            android:background="@null"
+            style="?android:buttonBarButtonStyle"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/header_user_position"
+        android:layout_toRightOf="@id/avatar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp">
+
+        <include
+            layout="@layout/anar_display" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
